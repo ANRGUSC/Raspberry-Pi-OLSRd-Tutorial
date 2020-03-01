@@ -31,22 +31,22 @@ If you are interested in reading about Ad-Hoc networks and OLSR, here are some r
 
 Files for the RPi:
 
-- config_ad_hoc.sh : configuration for ad_hoc network on your wireless interface. The provided script does this on wlan1. 
+- `config_ad_hoc.sh` : configuration for ad_hoc network on your wireless interface. The provided script does this on wlan1. 
 make sure to change the IP address for each unique device in this file
 
-- start_olsrd.sh : Once you have configured your interface using config_ad_hoc.sh, you can run this to start olsrd
+- `start_olsrd.sh` : Once you have configured your interface using config_ad_hoc.sh, you can run this to start olsrd
 
-- restart_networking.sh - Should reconnect you to your local home wifi network. 
+- `restart_networking.sh` - Should reconnect you to your local home wifi network. 
 
-- rc.local : this file runs on boot. I have edited it to start "normal" networking on your Pi at boot, so you will automatically connect to a normal (non AdHoc) wifi network
+- `rc.local` : this file runs on boot. I have edited it to start "normal" networking on your Pi at boot, so you will automatically connect to a normal (non AdHoc) wifi network
 
 Files for your Ubuntu PC:
 
-- pc_adhoc.sh : configures your wireless interface your adhoc networking
+- `pc_adhoc.sh` : configures your wireless interface your adhoc networking
 
-- pc_restart_networking.sh : Should reconnect you to your local home wifi network. 
+- `pc_restart_networking.sh` : Should reconnect you to your local home wifi network. 
 
-- pc_start_olsrd.sh : Once you have configured your interface using config_ad_hoc.sh, you can run this to start olsrd
+- `pc_start_olsrd.sh` : Once you have configured your interface using config_ad_hoc.sh, you can run this to start olsrd
 
 
 **Step 1: Raspbian Setup**
@@ -103,17 +103,17 @@ NOTE: If your USB dongle wireless interface is not wlan1, you will need to edit 
 **Step 5: Copy the Shell Scripts onto your Raspberry Pi**
 You can do this using scp, an scp helper like FileZilla, or by creating the files and copy pasting my files into your RPi.
 	
-	*** the most important file to copy over is /etc/rc.local *** 
-	The lines added in this file will restart your network manager, allowing you to connect to your pi via your home wifi network on boot. 
+*** the most important file to copy over is /etc/rc.local *** 
+The lines added in this file will restart your network manager, allowing you to connect to your pi via your home wifi network on boot. 
 
 Next you can copy over the shell scripts. I have mine in /Documents/shell_scripts
 Just move the entire directory over to Documents, or wherever you want them
 
-	-- in the shell script config_ad_hoc.sh, make sure to give each device a unique IP address in the same subnet
+-- in the shell script config_ad_hoc.sh, make sure to give each device a unique IP address in the same subnet
 
-edit the /etc/olsrd/olsrd.conf file provided. I attached mine, but yours could be different depending on the subnet or IP addresses you want to use.  I indicated in comments in this file where I made changes and instructions on what changes you might have to make. 
+Edit the /etc/olsrd/olsrd.conf file provided. I attached mine, but yours could be different depending on the subnet or IP addresses you want to use.  I indicated in comments in this file where I made changes and instructions on what changes you might have to make. 
 
-	you can search in the provided file for "EDIT MADE HERE"
+you can search in the provided file for "EDIT MADE HERE"
 
 I tried to make every edit to the file easy to find. 
 
