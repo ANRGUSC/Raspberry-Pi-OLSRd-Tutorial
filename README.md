@@ -1,4 +1,4 @@
-This repository contains a tutorial for configuring a Raspberry Pi wireless mesh network. This is part of research project on cooperative localization, mapping, and exploration with a network of Turtlebot3 Burgers (more found at https://github.com/ANRGUSC/TurtleNet, https://github.com/ANRGUSC/TurtleNet_Simulations) in the Autonomous Networks Research Group at the University of Southern California under Professor Bhaskar Krishnamachari.
+This repository contains a tutorial for configuring a Raspberry Pi wireless mesh network. This is part of an ongoing research project on cooperative localization, mapping, and exploration with a network of Turtlebot3 Burgers (more found at https://github.com/ANRGUSC/TurtleNet, https://github.com/ANRGUSC/TurtleNet_Simulations) in the Autonomous Networks Research Group at the University of Southern California under Professor Bhaskar Krishnamachari.
 
 This tutorial was written by Charles Andre (https://github.com/candre97).
 
