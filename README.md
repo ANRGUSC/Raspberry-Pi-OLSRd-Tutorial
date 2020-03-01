@@ -1,11 +1,8 @@
-**Background:** 
-I am doing research on Campus at USC's Autonomous Networks Research Group. We're working on coordinated localization of robots related to the DARPA SubT challenge (https://www.darpa.mil/program/darpa-subterranean-challenge)
-In order to allow devices to communicate over longer distance and multiple hops, naturally we had to set up a mesh network. 
-The one in this tutorial is WiFi based, but I am definitely interested in replicating this using Radios. 
+This repository contains a tutorial for configuring a Raspberry Pi wireless mesh network. This is part of research project on cooperative localization, mapping, and exploration with a network of Turtlebot3 Burgers (more found at https://github.com/ANRGUSC/TurtleNet, https://github.com/ANRGUSC/TurtleNet_Simulations) in the Autonomous Networks Research Group at the University of Southern California under Professor Bhaskar Krishnamachari.
 
-I cannot guarantee that all of the steps will be the same if you do not have the same operating system on your Raspberry Pi. For this reason, step one will be setting up the same OS that I was using. 
+This tutorial was written by Charles Andre (https://github.com/candre97).
 
-The basic idea of my configuration is to automatically rejoin your local wifi network when your Pi boots up. Then if you want to go into AdHoc mode, you can use the shell scripts provided
+The configuration provided here is designed so that your Pi will automatically join your home wifi network and the provided shell scripts can be used to switch into ad hoc mode and start running a mesh routing protocol.
 
 If you are interested in reading about Ad-Hoc networks and OLSR, here are some resources to get you started:
 
@@ -18,17 +15,17 @@ If you are interested in reading about Ad-Hoc networks and OLSR, here are some r
 
 **Hardware required:**
 
-- Raspberry Pi
+- Raspberry Pi (we use a Model 3B+)
 
 - MicroSD card
 
-- Wifi USB dongle. The one I used is available on Amazon Prime for about $10
+- Wifi USB dongle. The one we used is available on Amazon Prime for about $10
 
 	https://www.amazon.com/Wifi-Antenna-Raspberry-Pi-Instructions/dp/B00H95C0A2?ref_=ast_bbp_dp
 	you need 1 per RPi + 1 for your laptop 
 - Micro USB to power your Raspberry Pi
 
-- PC (I was using Ubuntu 18.04)
+- PC (tested on Ubuntu 18.04 and Ubuntu 16.04)
 
 **Description of Files:**
 
@@ -168,7 +165,7 @@ from the pi's shell scripts director
 You are all done, you should see this screen: 
 ![](images/olsrd_working.png)
 
-To reconnect to your home wifi network. Run the restart_networking shell scripts. 
+To reconnect to your home wifi network, run the restart_networking shell scripts. 
 
 If you want to see multi-hopping work without having to go too far, you can decrease the Tx Power on your wifi antenna using the following command:
 iwconfig wlan1 txpower 0
